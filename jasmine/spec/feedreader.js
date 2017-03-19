@@ -55,14 +55,12 @@ $(function () {
     describe('Initial Entries', function () {
         // beforeEach for async request
         beforeEach(function (done) {
-            loadFeed(0, function () {
-                done();
-            });
+            loadFeed(0, done);
         });
         // Checks if at least one .entry element is within the .feed-container
-        it('have at least one entry in the feed container', function (done) {
-            expect($('.entry').length).toBeGreaterThan(0);
-            done();
+        it('have at least one entry in the feed container', function () {
+            expect($('.feed .entry').length).toBeGreaterThan(0);
+
         });
     });
 
